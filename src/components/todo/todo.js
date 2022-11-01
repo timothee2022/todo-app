@@ -1,9 +1,20 @@
 import React, { useEffect, useState } from 'react';
 import useForm from '../../hooks/form.js';
+import { createStyles } from '@mantine/core';
+// import './styles.scss';
 
 import { v4 as uuid } from 'uuid';
 
+export const useStyles = createStyles((theme) => ({
+  button: {
+    backgroundColor: theme.colors.blue[9],
+    borderRadius: theme.radius.sm
+  },
+}));
+
 const ToDo = () => {
+
+  const { classes } = useStyles();
 
   const [defaultValues] = useState({
     difficulty: 4,
@@ -53,24 +64,35 @@ const ToDo = () => {
 
         <h2>Add To Do Item</h2>
 
+        <ul>
         <label>
           <span>To Do Item</span>
           <input onChange={handleChange} name="text" type="text" placeholder="Item Details" />
         </label>
+        </ul>
 
+        <ul>
         <label>
           <span>Assigned To</span>
           <input onChange={handleChange} name="assignee" type="text" placeholder="Assignee Name" />
         </label>
+        </ul>
 
+        <ul>
         <label>
           <span>Difficulty</span>
           <input onChange={handleChange} defaultValue={defaultValues.difficulty} type="range" min={1} max={5} name="difficulty" />
         </label>
-
+        </ul>
+        
+        <ul>
         <label>
-          <button type="submit">Add Item</button>
+          <button 
+          className={classes.button}
+          type="submit">Add Item
+          </button>
         </label>
+        </ul>
       </form>
 
       {list.map(item => (
