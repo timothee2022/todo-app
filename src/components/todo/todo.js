@@ -10,6 +10,14 @@ export const useStyles = createStyles((theme) => ({
     backgroundColor: theme.colors.blue[9],
     borderRadius: theme.radius.sm
   },
+
+  h1: {
+    backgroundColor: theme.colors.gray[9],
+    borderRadius: theme.radius.sm,
+    padding: '1rem',
+    margin: '2rem'
+  }
+
 }));
 
 const ToDo = () => {
@@ -31,15 +39,15 @@ const ToDo = () => {
   }
 
   function deleteItem(id) {
-    const items = list.filter( item => item.id !== id );
+    const items = list.filter(item => item.id !== id);
     setList(items);
   }
 
   function toggleComplete(id) {
 
-    const items = list.map( item => {
-      if ( item.id == id ) {
-        item.complete = ! item.complete;
+    const items = list.map(item => {
+      if (item.id == id) {
+        item.complete = !item.complete;
       }
       return item;
     });
@@ -57,41 +65,46 @@ const ToDo = () => {
   return (
     <>
       <header>
-        <h1>To Do List: {incomplete} items pending</h1>
+        <h1 className={classes.h1}>To Do List: {incomplete} items pending</h1>
       </header>
 
       <form onSubmit={handleSubmit}>
 
-        <h2>Add To Do Item</h2>
-
+        <h2 >Add To Do Item</h2>
         <ul>
-        <label>
-          <span>To Do Item</span>
-          <input onChange={handleChange} name="text" type="text" placeholder="Item Details" />
-        </label>
+          <label>
+            <span>To Do Item</span>
+            <ul>
+              <input onChange={handleChange} name="text" type="text" placeholder="Item Details" />
+            </ul>
+          </label>
         </ul>
 
         <ul>
-        <label>
-          <span>Assigned To</span>
-          <input onChange={handleChange} name="assignee" type="text" placeholder="Assignee Name" />
-        </label>
+          <label>
+            <span>Assigned To</span>
+            <ul>
+            <input onChange={handleChange} name="assignee" type="text" placeholder="Assignee Name" />
+            </ul>
+          </label>
         </ul>
 
         <ul>
-        <label>
-          <span>Difficulty</span>
-          <input onChange={handleChange} defaultValue={defaultValues.difficulty} type="range" min={1} max={5} name="difficulty" />
-        </label>
+          <label>
+            <span>Difficulty</span>
+            <ul>
+            <input onChange={handleChange} defaultValue={defaultValues.difficulty} type="range" min={1} max={5} name="difficulty" />
+            </ul>
+          </label>
         </ul>
-        
+
         <ul>
-        <label>
-          <button 
-          className={classes.button}
-          type="submit">Add Item
-          </button>
-        </label>
+          <label>
+            <button
+              className={classes.button}
+              type="submit">Add Item
+            </button>
+          </label>
         </ul>
       </form>
 
