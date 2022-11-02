@@ -23,7 +23,6 @@ In Phase 1, we’re going to perform some refactoring of the To Do application a
 
 * [Ryan GitHub Demo-Code](https://github.com/codefellows/seattle-code-javascript-401d48/tree/main/class-32/inclass-demo/todo)
 * [Mantine Component API](https://mantine.dev/pages/getting-started/) 
-* [Code Fellow Class-31 lab](https://zoom.us/rec/share/YKR0dfp7809FGOFtC6ipzbehXhd-TvpMPbiTVzw044Pp-qCP_0TJTPvYyZen6yru.2gHB85C_z3tMpecB) (Passcode: mvz172.Be@)
 * [Class 31 Starter Code](https://github.com/codefellows/seattle-code-javascript-401d48/tree/main/class-31/lab/starter-code)
 
 ### Setup
