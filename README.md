@@ -28,6 +28,8 @@ In Phase 1, we’re going to perform some refactoring of the To Do application a
 
 ### Setup
 
+http://localhost:3000/
+
 #### How to initialize/run your application (where applicable)
 
 * `npx create-react-app todo-app`
